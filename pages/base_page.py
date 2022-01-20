@@ -16,3 +16,9 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+
+    def is_text_on_element_matching(self, text, how, what_element):
+        if text in (self.browser.find_element(how, what_element)).text:
+            return True
+        else:
+            return False

@@ -6,5 +6,11 @@ class MainPageLocators:
 
 
 class LoginPageLocators:
-    LOGIN_FORM = (By.CSS_SELECTOR, 'form[id="login_for"]')
-    REGISTER_FORM = (By.CSS_SELECTOR, 'form[id="register_for"]')
+    LOGIN_FORM = (By.CSS_SELECTOR, 'form[id="login_form"]')
+    REGISTER_FORM = (By.CSS_SELECTOR, 'form[id="register_form"]')
+
+
+class ProductPageLocators:
+    BUTTON_ADD_TO_CART = (By.CSS_SELECTOR, 'button.btn-add-to-basket')
+    INFO_MESSAGE = (By.CSS_SELECTOR, '.alertinner')
+
