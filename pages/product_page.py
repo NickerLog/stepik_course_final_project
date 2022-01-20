@@ -34,13 +34,13 @@ class ProductPage(BasePage):
     def should_be_information_message(self):
         assert self.is_element_present(*ProductPageLocators.INFO_MESSAGE), "not found info message about add-to-cart"
 
-    def should_text_match_in_message(self, text):
-        assert self.is_text_on_element_matching(text, *ProductPageLocators.INFO_MESSAGE), \
-            f"text on add-to-cart info massage doesn't match with Product name:{text}"
+    def should_text_match_in_message(self):
+        assert self.is_text_on_element_matching(*ProductPageLocators.PRODUCT_NAME, *ProductPageLocators.INFO_MESSAGE), \
+            f"text on add-to-cart info massage doesn't match with Product name"
 
-    def go_to_add_product_to_cart(self, text):
+    def go_to_add_product_to_cart(self):
         self.should_be_promo_newyear_in_url()
         self.should_be_add_to_cart_button()
         self.go_to_add_to_cart_button()
         self.should_be_information_message()
-        self.should_text_match_in_message(text)
+        self.should_text_match_in_message()

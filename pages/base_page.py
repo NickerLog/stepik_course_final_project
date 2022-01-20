@@ -17,8 +17,10 @@ class BasePage:
             return False
         return True
 
-    def is_text_on_element_matching(self, text, how, what_element):
-        if text in (self.browser.find_element(how, what_element)).text:
+    def is_text_on_element_matching(self, how_search_text_element, what_text_element,
+                                    how_search_with_text_element, what_with_text_element):
+        if (self.browser.find_element(how_search_text_element, what_text_element)).text in \
+                (self.browser.find_element(how_search_with_text_element, what_with_text_element)).text:
             return True
         else:
             return False
