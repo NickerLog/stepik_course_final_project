@@ -39,7 +39,6 @@ class ProductPage(BasePage):
             f"text on add-to-cart info massage doesn't match with Product name"
 
     def go_to_add_product_to_cart(self):
-        self.should_be_promo_newyear_in_url()
         self.should_be_add_to_cart_button()
         self.go_to_add_to_cart_button()
         self.should_be_information_message()
