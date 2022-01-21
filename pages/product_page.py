@@ -44,6 +44,12 @@ class ProductPage(BasePage):
         self.should_be_information_message()
         self.should_text_match_in_message()
 
+    def go_to_add_product_to_cart(self):
+        self.should_be_add_to_cart_button()
+        self.go_to_add_to_cart_button()
+        self.should_be_information_message()
+        self.should_text_match_in_message()
+
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should not be"

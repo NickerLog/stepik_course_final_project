@@ -21,6 +21,15 @@ class BasePage:
             return False
         return True
 
+    def is_element_present_with_wait(self, how, what, timeout):
+        try:
+            WebDriverWait(self.browser, timeout, 1, TimeoutException).\
+                until(expected_conditions.presence_of_element_located((how, what)))
+        except TimeoutException:
+            return False
+
+        return True
+
     def is_text_on_element_matching(self, how_search_text_element, what_text_element,
                                     how_search_with_text_element, what_with_text_element):
         if (self.browser.find_element(how_search_text_element, what_text_element)).text == \
@@ -57,5 +66,6 @@ class BasePage:
         go_to_cart_button = self.browser.find_element(*BasePageLocators.LOOK_AT_CART_BUTTON)
         go_to_cart_button.click()
 
-
-
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), \
+            "User icon is not presented, probably unauthorised user"
