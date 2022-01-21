@@ -6,11 +6,11 @@ import time
 
 
 @pytest.mark.need_review
-def test_guest_can_add_product_with_promo_to_basket(browser):
-    link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
+def test_guest_can_add_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/"
     page = ProductPage(browser, link)
     page.open()
-    page.go_to_add_product_with_promo_to_cart()
+    page.go_to_add_product_to_cart()
 
 
 def test_guest_can_add_product_with_promo_to_basket2(browser):
